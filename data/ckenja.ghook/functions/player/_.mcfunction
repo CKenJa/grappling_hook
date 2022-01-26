@@ -17,3 +17,5 @@ scoreboard players set #have_rod ckenja.ghook 1
 
 execute as @e[type=fishing_bobber,distance=..36] positioned as @s run function ckenja.ghook:bobber/_
 execute as @e[type=pig,tag=ckenja.ghook.pig,distance=..6] positioned as @s if score @s ckenja.ghook = #temp.id ckenja.ghook run function ckenja.ghook:pig/_
+#仮のアマスタ死亡処理
+execute as @e[type=armor_stand,tag=ckenja.ghook.stand,distance=..36] at @s unless entity @e[type=fishing_bobber,tag=ckenja.ghook.bobber,sort=nearest,limit=1] run kill @s
