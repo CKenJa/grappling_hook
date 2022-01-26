@@ -16,3 +16,4 @@ execute unless data storage ckenja.ghook.__temp__: player{SelectedItem:{tag:{ctc
 scoreboard players set #have_rod ckenja.ghook 1
 
 execute as @e[type=fishing_bobber,distance=..36] positioned as @s run function ckenja.ghook:bobber/_
+execute as @e[type=pig,distance=..6,tag=ckenja.ghook.pig] positioned as @s if score @s ckenja.ghook = #temp.id ckenja.ghook run function ckenja.ghook:pig/_
