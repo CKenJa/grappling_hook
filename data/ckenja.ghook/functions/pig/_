@@ -1,7 +1,0 @@
-#> ckenja.ghook:pig/_
-#
-# @within ckenja.ghook:player/_
-
-#bobberあったら移動
-execute if score #bobber_hooked matches 1.. run function ckenja.ghook:pig/main
-#なくてもキー検知を現在のmotionを減衰して足してmotion代入
