@@ -14,7 +14,7 @@ execute unless data storage ckenja.ghook.__temp__: player{SelectedItem:{tag:{ctc
 #仮に持っているとする
 scoreboard players set #have_rod ckenja.ghook 1
 
-execute as @e[type=fishing_bobber,distance=..36] positioned as @s run function ckenja.ghook:bobber/_
+execute as @e[type=fishing_bobber,distance=..36] run function ckenja.ghook:bobber/_
 execute if predicate ckenja.ghook:onpig as @e[type=pig,tag=ckenja.ghook.pig,distance=..6,sort=nearest] positioned as @s run function ckenja.ghook:pig/_
 
 #アマスタ死亡処理
@@ -22,3 +22,4 @@ execute as @e[type=armor_stand,tag=ckenja.ghook.stand,distance=..36] if score @s
 
 scoreboard players reset #bobber_hooked ckenja.ghook
 scoreboard players reset #have_rod ckenja.ghook
+scoreboard players reset #hooking ckenja.ghook
