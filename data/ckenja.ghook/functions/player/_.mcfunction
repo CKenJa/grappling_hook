@@ -23,3 +23,4 @@ execute as @e[type=armor_stand,tag=ckenja.ghook.stand,distance=..36] if score @s
 scoreboard players reset #bobber_hooked ckenja.ghook
 scoreboard players reset #have_rod ckenja.ghook
 scoreboard players reset #hooking ckenja.ghook
+scoreboard players reset #long ckenja.ghook
