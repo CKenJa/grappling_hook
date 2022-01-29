@@ -58,6 +58,7 @@
     "#minecraft:small_flowers",
     "#minecraft:wooden_pressure_plates",
     "#minecraft:banners",
-    "#minecraft:signs"    
+    "#minecraft:signs",
+    "minecraft:void_air"   
   ]
 }

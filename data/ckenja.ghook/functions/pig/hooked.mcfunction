@@ -8,7 +8,7 @@
 execute if score #hooking ckenja.ghook matches 1 run function ckenja.ghook:pig/hooking
 #追加のベクトル(重力とキー操作)
 #    execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[0] 20000
-#    execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[1] 20000
+#    execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[1] 10000
 #    execute store result score $player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[2] 20000
 #の和
 #    scoreboard players operation @s ckenja.ghook.x += $player.motion.x ckenja.ghook
