@@ -67,3 +67,5 @@ data modify entity @s Rotation set from storage ckenja.ghook.__temp__: player.Ro
 
 #終了用処理
 tag @s add ckenja.ghook.pig.hookednow
+#particle dust_color_transition 1.000 0.200 0.039 2 0.078 0.600 1.000 ~ ~ ~ 0 0 0 1 2 force
+execute if predicate ckenja.ghook:kakuritu run particle large_smoke ~ ~ ~
