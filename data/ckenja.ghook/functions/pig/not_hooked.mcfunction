@@ -3,9 +3,9 @@
 #
 #
 # @within function ckenja.ghook:pig/_
-execute store result score #temp.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[0] 100000
-execute store result score #temp.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[1] 10000
-execute store result score #temp.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[2] 100000
+execute store result score #temp.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[0] 80000
+execute store result score #temp.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[1] 0
+execute store result score #temp.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.Motion[2] 80000
 execute store result score #temp.x.motion ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[0] 9800
 execute store result score #temp.y.motion ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[1] 9800
 execute store result score #temp.z.motion ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[2] 9800

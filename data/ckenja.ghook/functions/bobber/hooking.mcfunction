@@ -11,3 +11,6 @@ tag @s add ckenja.ghook.bobber.hooked
 execute facing entity @s eyes run function ckenja.ghook:measure/general
 #保存しよう
 scoreboard players operation @s ckenja.ghook.l = #measure ckenja.ghook
+execute store result score @s ckenja.ghook.x run data get entity @s Pos[0] 10000
+execute store result score @s ckenja.ghook.y run data get entity @s Pos[1] 10000
+execute store result score @s ckenja.ghook.z run data get entity @s Pos[2] 10000
