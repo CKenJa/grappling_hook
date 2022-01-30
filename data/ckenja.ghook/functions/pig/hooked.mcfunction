@@ -26,7 +26,7 @@ execute unless score #hooking ckenja.ghook matches 1 run function ckenja.ghook:p
     scoreboard players operation $intertia.y ckenja.ghook += $pig.pos.y ckenja.ghook
     scoreboard players operation $intertia.z ckenja.ghook += $pig.pos.z ckenja.ghook
 #その座標にマーカーを出し、フックから紐長分マーカー方向に進んで、その場所にTP
-    data modify storage ckenja.ghook.__temp__: pig.hooked.marker.Pos set value [0.0,0.0,0.0] 
+    data modify entity @s Motion set value [0.0,0.0,0.0] 
     execute store result storage ckenja.ghook.__temp__: pig.hooked.marker.Pos[0] double 0.0001 run scoreboard players get $intertia.x ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: pig.hooked.marker.Pos[1] double 0.0001 run scoreboard players get $intertia.y ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: pig.hooked.marker.Pos[2] double 0.0001 run scoreboard players get $intertia.z ckenja.ghook
@@ -35,7 +35,8 @@ execute unless score #hooking ckenja.ghook matches 1 run function ckenja.ghook:p
     execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:marker/vec
 
 #マーカーの座標を豚に代入する(TPだと乗れない)
-    data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.hooked.pig.Pos
+    execute unless score #temp.long0 ckenja.ghook matches 1 run data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.hooked.pig.Pos
+#    execute unless score #temp.long0 ckenja.ghook matches 1 as @e[type=fishing_bobber,distance=..38] if score @s ckenja.ghook = #temp.id ckenja.ghook run scoreboard players operation @s ckenja.ghook.l += #temp.long.l ckenja.ghook
 
 #次tick用のMotion作成
 #    execute store result score @s ckenja.ghook.x run data get storage ckenja.ghook.__temp__: pig.hooked.pig.Pos[0] 10000
@@ -63,3 +64,6 @@ execute unless score #hooking ckenja.ghook matches 1 run function ckenja.ghook:p
 
 
 data modify entity @s Rotation set from storage ckenja.ghook.__temp__: player.Rotation
+
+#終了用処理
+tag @s add ckenja.ghook.pig.hookednow

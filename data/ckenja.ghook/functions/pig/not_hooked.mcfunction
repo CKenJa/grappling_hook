@@ -17,4 +17,8 @@ data merge storage ckenja.ghook.__temp__: {pig:{not_hooked:[0.0,0.0,0.0]}}
 execute store result storage ckenja.ghook.__temp__: pig.not_hooked[0] double 0.0001 run scoreboard players get #temp.x ckenja.ghook
 execute store result storage ckenja.ghook.__temp__: pig.not_hooked[1] double 0.0001 run scoreboard players get #temp.y ckenja.ghook
 execute store result storage ckenja.ghook.__temp__: pig.not_hooked[2] double 0.0001 run scoreboard players get #temp.z ckenja.ghook
+
+#終了直後なら
+    execute if entity @s[tag=ckenja.ghook.pig.hookednow] run function ckenja.ghook:pig/not_hooked_start
+
 data modify entity @s Motion set from storage ckenja.ghook.__temp__: pig.not_hooked
