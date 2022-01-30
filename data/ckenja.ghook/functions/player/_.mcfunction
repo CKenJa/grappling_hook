@@ -12,7 +12,7 @@ data modify storage ckenja.ghook.__temp__: player set from entity @s
 execute if data storage ckenja.ghook.__temp__: player{SelectedItem:{tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}} run function ckenja.ghook:player/have
 execute unless data storage ckenja.ghook.__temp__: player{SelectedItem:{tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}} if data storage ckenja.ghook.__temp__: player{Inventory:[{Slot:-106b,tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}]} run function ckenja.ghook:player/have
 #仮に持っているとする
-scoreboard players set #have_rod ckenja.ghook 1
+#scoreboard players set #have_rod ckenja.ghook 1
 
 #スコア認証はいらない
 execute as @e[type=fishing_bobber,distance=..36] run function ckenja.ghook:bobber/_

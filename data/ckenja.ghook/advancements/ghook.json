@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "craft": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {}
+            }
+          ],
+          "recipe": "ckenja.ghook:ghook"
+        }
+      }
+    },
+    "rewards": {
+      "function": "ckenja.ghook:recipe"
+    }
+  }
+  

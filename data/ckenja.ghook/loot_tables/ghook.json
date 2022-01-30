@@ -1,0 +1,36 @@
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:fishing_rod",
+            "functions": [
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{Unbreakable:true,ctc:{id:\"ghook\",from:\"ckenja.ghook:\"}}"
+              },
+              {
+                "function": "minecraft:set_name",
+                "name": {
+                  "text": "Grappling hook",
+                  "italic": false
+                }
+              },
+              {
+                "function": "minecraft:set_lore",
+                "lore": [
+                  {
+                    "text": "ブタさんの飛ぶ頃に",
+                    "italic": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

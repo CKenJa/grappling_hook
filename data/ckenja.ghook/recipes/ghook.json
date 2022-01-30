@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#M#",
+        "FSH",
+        "#W#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:porkchop"
+        },
+        "M": {
+            "item": "minecraft:music_disc_pigstep"
+        },
+        "F": {
+            "item": "minecraft:fishing_rod"
+        },
+        "S": {
+            "item": "minecraft:saddle"
+        },
+        "H": {
+            "item": "minecraft:honey_block"
+        },
+        "W": {
+            "item": "minecraft:firework_rocket"
+        }
+    },
+    "result": {
+        "item": "minecraft:fishing_rod",
+        "count": 1
+    }
+}
