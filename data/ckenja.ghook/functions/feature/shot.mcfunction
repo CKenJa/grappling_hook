@@ -10,4 +10,6 @@
     execute rotated as @s as @e[type=bat,tag=ckenja.ghook.hook.init,distance=..1] positioned as @s run function ckenja.ghook:feature/shot.init
 
 #長押し検知できるアイテムに変更
-    item replace entity @s weapon.mainhand with shield{Unbreakable:true,ctc:{id:"ghook",from:"ckenja.ghook:"},CustomModelData:1260000} 1
+    data modify storage player_item_tuner: condition.if set value {id:"minecraft:carrot_on_a_stick",Slot:8b,tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}
+    data modify storage player_item_tuner: result.merge set value {id:"minecraft:shield"}
+    function #player_item_tuner:modify/inventory
