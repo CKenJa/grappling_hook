@@ -9,3 +9,5 @@ execute rotated as @s positioned 0 0 0 in minecraft:overworld run summon marker 
 execute as @e[type=marker,tag=ckenja.ghook.marker] run data modify storage ckenja.ghook.__temp__: marker.data.Pos set from entity @s Pos
 execute as @e[type=marker,tag=ckenja.ghook.marker] run kill @s
 execute positioned 0 0 0 in minecraft:overworld if score #temp.query ckenja.ghook matches 1 run forceload remove ~ ~
+
+say jet

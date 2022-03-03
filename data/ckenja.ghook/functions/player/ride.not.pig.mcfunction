@@ -4,5 +4,5 @@
 #
 # @within function ckenja.ghook:player/ride.no
 
-tag @s remove ckenja.ghook.passenger.player
+tag @s remove ckenja.ghook.pig
 scoreboard players reset @s ckenja.ghook

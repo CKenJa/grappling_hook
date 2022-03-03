@@ -14,3 +14,4 @@ execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id c
 
 #慣性をMotion代入
 execute if score #flag.hooked ckenja.ghook matches 1 as @e[type=pig,tag=ckenja.ghook.pig,distance=..6] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:feature/reel.pig
+say reel

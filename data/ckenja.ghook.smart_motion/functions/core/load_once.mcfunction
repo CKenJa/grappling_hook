@@ -1,4 +1,4 @@
-say ckenja.ghook.SmartMotion の導入に成功しました
+#say ckenja.ghook.SmartMotion の導入に成功しました
 
 scoreboard objectives add ckj.gh.sm.Calc dummy
 scoreboard objectives add ckj.gh.sm.X dummy
