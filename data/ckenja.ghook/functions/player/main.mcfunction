@@ -5,8 +5,9 @@
 
 #グラップルを持ってるか検知
     data modify storage ckenja.ghook.__temp__: player.data.SelectedItem set from entity @s SelectedItem
-    execute if data storage ckenja.ghook.__temp__: player.data{SelectedItem:{tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}} run scoreboard players set #flag.have_rod ckenja.ghook 1
-    execute unless score #flag.have_rod ckenja.ghook matches 1 run data modify storage ckenja.ghook.__temp__: player.data.Inventory set from entity @s Inventory
+    execute if data storage ckenja.ghook.__temp__: player.data.SelectedItem{tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}} run scoreboard players set #flag.have_rod ckenja.ghook 1
+    #execute unless score #flag.have_rod ckenja.ghook matches 1 run 
+    data modify storage ckenja.ghook.__temp__: player.data.Inventory set from entity @s Inventory
     execute if data storage ckenja.ghook.__temp__: player.data.Inventory[{Slot:-106b,tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}] run scoreboard players set #flag.have_rod ckenja.ghook 1
 
 #フックを前にぶっ飛ばす(SmartMotionで)

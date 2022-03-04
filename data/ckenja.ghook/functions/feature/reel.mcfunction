@@ -5,7 +5,7 @@
 # @within function ckenja.ghook:player/**
 
 #フック収納
-execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run kill @s
+execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:void_kill
 
 #アイテムをニンジン棒に戻す
     data modify storage player_item_tuner: condition.if set value {id:"minecraft:shield",Slot:8b,tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}
