@@ -19,7 +19,7 @@
     #execute unless score #flag.have_rod ckenja.ghook matches 1 run function ckenja.ghook:feature/reel
 
 #ニンジン棒クリックしたら、フック射出
-execute if score @s ckenja.ghook.cs matches 1.. if score #flag.have_rod ckenja.ghook matches 1 run function ckenja.ghook:feature/shot
+#execute if score @s ckenja.ghook.cs matches 1.. if score #flag.have_rod ckenja.ghook matches 1 run function ckenja.ghook:feature/shot
 
 #二回using_itemし終わったら、フック収納して慣性をMotion代入(./player.using.exit.second
 execute if entity @s[tag=ckenja.ghook.player.using_item.before] run function ckenja.ghook:player/using/before
