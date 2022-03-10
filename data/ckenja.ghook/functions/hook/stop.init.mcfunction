@@ -1,8 +1,8 @@
-#> ckenja.ghook:player/hook/stop.init
+#> ckenja.ghook:hook/stop.init
 #
 #
 #
-# @within function ckenja.ghook:player/hook/stop
+# @within function ckenja.ghook:hook/stop
 
 tag @s add ckenja.ghook.hook.hooked
 scoreboard players set #flag.hooked.init ckenja.ghook 1
