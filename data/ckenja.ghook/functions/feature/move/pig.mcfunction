@@ -38,7 +38,7 @@
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[1] double 0.0001 run scoreboard players get $intertia.y ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get $intertia.z ckenja.ghook
     summon marker ~ ~ ~ {Tags:["ckenja.ghook.marker"]}
-    execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:feature/move/hook
+    execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:feature/move/marker
 
 #マーカーの座標を豚に代入する(TPだと降ろされるのでPos代入)
     data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.merge.Pos

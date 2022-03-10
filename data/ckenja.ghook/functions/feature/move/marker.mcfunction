@@ -1,4 +1,4 @@
-#> ckenja.ghook:feature/move/hook
+#> ckenja.ghook:feature/move/marker
 #
 #
 #
