@@ -34,7 +34,6 @@
     scoreboard players operation $intertia.z ckenja.ghook += $pig.pos.z ckenja.ghook
 
 #その座標にマーカーを出し、フックからロープ距離分マーカー方向に進んで、その場所の座標を記憶
-    data modify entity @s Motion set value [0.0,0.0,0.0]
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[0] double 0.0001 run scoreboard players get $intertia.x ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[1] double 0.0001 run scoreboard players get $intertia.y ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get $intertia.z ckenja.ghook
@@ -64,3 +63,5 @@
     scoreboard players operation $ghook.z ckenja.ghook = @s ckenja.ghook.z
 
 execute positioned as @s run particle cloud ~ ~ ~
+data modify entity @s Motion set value [0.0,0.0,0.0]
+data modify entity @s Rotation set from storage ckenja.ghook.__temp__: player.data.Rotation
