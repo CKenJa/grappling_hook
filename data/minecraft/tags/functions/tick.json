@@ -1,6 +1,5 @@
 {
     "values": [
-        "ckenja.ghook:tick",
-        "ckenja.ghook.smart_motion:core/tick"
+        "ckenja.ghook:tick"
     ]
 }

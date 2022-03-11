@@ -8,8 +8,7 @@
     #ついでにリードがあるか否か
     execute store success score #flag.have_hook ckenja.ghook run execute if data entity @s Leash.UUID
     execute if score #flag.have_hook ckenja.ghook matches 0 at @s as @e[type=item,nbt={Item:{id:"minecraft:lead",Count:1b}},distance=..0.1] run kill @s
-
-    execute if entity @s[distance=..104] run scoreboard players set #flag.have_hook ckenja.ghook 1
+    execute if score #flag.have_hook ckenja.ghook matches 1 unless entity @s[distance=..104] run scoreboard players set #flag.have_hook ckenja.ghook 0
 
     execute if score #flag.have_hook ckenja.ghook matches 0 run scoreboard players set #flag.hook.kill ckenja.ghook 1
-    execute if score #flag.have_hook ckenja.ghook matches 1 run function ckenja.ghook:hook/kill.not
+    execute if score #flag.have_hook ckenja.ghook matches 1 run function ckenja.ghook:hook/main

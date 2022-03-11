@@ -1,6 +1,5 @@
 {
     "values": [
-        "ckenja.ghook:load",
-        "ckenja.ghook.smart_motion:core/load"
+        "ckenja.ghook:load"
     ]
 }
