@@ -2,7 +2,7 @@
 #
 #
 #
-# @within function ckenja.ghook:player/**
+# @within function ckenja.ghook:player/_
 
 scoreboard players reset #flag.hook.kill ckenja.ghook
 tag @s remove ckenja.ghook.player.using_item.first_exit
