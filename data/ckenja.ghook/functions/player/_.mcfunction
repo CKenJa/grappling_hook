@@ -14,7 +14,7 @@ execute if entity @s[tag=ckenja.ghook.player.ride_pig] run function ckenja.ghook
 execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel
 
 #リセット
-    tag @s remove ckenja.ghook.player.using_item
+    tag @s remove ckenja.ghook.player.shot_crossbow
 
     scoreboard players reset #flag.have_hook ckenja.ghook
     scoreboard players reset #flag.hooked ckenja.ghook
