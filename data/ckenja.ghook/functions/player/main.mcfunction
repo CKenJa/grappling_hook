@@ -4,10 +4,10 @@
 #@within function ckenja.ghook:player/ride
 
 #二回クリックし終わったら、フック収納して慣性をMotion代入(./player.using.exit.second
-execute if entity @s[tag=ckenja.ghook.player.shot_crossbow.before] run function ckenja.ghook:player/using/before
+execute if entity @s[tag=ckenja.ghook.player.shot_crossbow.before] run function ckenja.ghook:player/shot_crossbow/before
 
 #クリック検知
-execute if entity @s[tag=ckenja.ghook.player.using_item] run function ckenja.ghook:player/using/now
+execute if entity @s[tag=ckenja.ghook.player.shot_crossbow] run function ckenja.ghook:player/shot_crossbow/now
 
 data modify storage ckenja.ghook.__temp__: player.data.Motion set from entity @s Motion
 data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity @s Rotation

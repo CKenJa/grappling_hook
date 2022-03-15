@@ -5,7 +5,7 @@
 # @within function ckenja.ghook:player/_
 
 scoreboard players reset #flag.hook.kill ckenja.ghook
-tag @s remove ckenja.ghook.player.using_item.first_exit
+tag @s remove ckenja.ghook.player.shot_crossbow.first_exit
 
 #フック収納
 execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:void_kill
