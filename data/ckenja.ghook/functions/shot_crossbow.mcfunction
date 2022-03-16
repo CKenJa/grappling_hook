@@ -6,3 +6,5 @@
 
 advancement revoke @s only ckenja.ghook:shot_crossbow
 tag @s add ckenja.ghook.player.shot_crossbow
+
+say sh

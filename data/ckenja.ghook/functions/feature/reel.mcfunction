@@ -18,4 +18,3 @@ data modify storage player_item_tuner: condition.if set value {tag:{ctc:{id:"gho
 data modify storage player_item_tuner: result.merge set value {tag:{CustomModelData:126000}}
 function #player_item_tuner:merge/inventory
 
-say reel

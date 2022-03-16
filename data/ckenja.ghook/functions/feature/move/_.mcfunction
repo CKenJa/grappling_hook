@@ -12,4 +12,3 @@ execute as @e[type=pig,tag=ckenja.ghook.pig,distance=..6] if score @s ckenja.gho
 execute if score #temp.long ckenja.ghook matches 1.. run scoreboard players operation @s ckenja.ghook.l = #temp.long ckenja.ghook
 scoreboard players reset #temp.long ckenja.ghook
 
-say move

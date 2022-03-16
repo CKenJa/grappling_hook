@@ -18,8 +18,8 @@ execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghoo
     #空気を装填
     #わざわざ使わなくてもメインハンドとオフハンドみるだけでいい気がするめんどくさい
     data modify storage player_item_tuner: condition.if set value {tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}
-    data modify storage player_item_tuner: result.merge set value {tag:{ChargedProjectiles:[{id:"minecraft:air",Count:1b},{},{}],Charged:1b}}
-    execute if entity @s[tag=ckenja.ghook.player.shot_crossbow] run function #player_item_tuner:merge/inventory
+    data modify storage player_item_tuner: result.merge set value {tag:{ChargedProjectiles:[{},{},{}],Charged:0b}}
+    execute if entity @s run function #player_item_tuner:merge/inventory
 
     tag @s remove ckenja.ghook.player.shot_crossbow
 

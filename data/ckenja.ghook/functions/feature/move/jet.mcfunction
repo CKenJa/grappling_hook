@@ -14,4 +14,3 @@ execute store result score $jet.z ckenja.ghook run data get storage ckenja.ghook
 scoreboard players operation $intertia.x ckenja.ghook += $jet.x ckenja.ghook
 scoreboard players operation $intertia.y ckenja.ghook += $jet.y ckenja.ghook
 scoreboard players operation $intertia.z ckenja.ghook += $jet.z ckenja.ghook
-say jet
