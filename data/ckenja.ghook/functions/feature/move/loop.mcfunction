@@ -8,6 +8,7 @@
 #
 # @within function ckenja.ghook:feature/move/marker
 
+particle enchanted_hit ~ ~ ~
 scoreboard players remove #temp.long ckenja.ghook 25
 scoreboard players add #temp.distance ckenja.ghook 25
 

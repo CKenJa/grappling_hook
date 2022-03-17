@@ -4,6 +4,10 @@
 #
 # @within function ckenja.ghook:feature/move/pig
 
+#デバッグ
+    execute at @s run particle composter ~ ~ ~
+    tellraw @p {"score":{"name":"#temp.long","objective":"ckenja.ghook"}}
+
 data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.Pos
 
 #ループでマーカーの方向に移動して球上の位置を出す
