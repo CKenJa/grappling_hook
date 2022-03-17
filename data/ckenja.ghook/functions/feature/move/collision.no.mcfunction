@@ -1,8 +1,10 @@
-#> ckenja.ghook:feature/move/unmoveable
+#> ckenja.ghook:feature/move/collision.no
 #
 #
 #
-# @within function ckenja.ghook:feature/move/loop
+# @within function ckenja.ghook:feature/move/collision
+
+scoreboard players set #flag.no_collision ckenja.ghook 1
 
 #ロープが縮む
 execute if score #temp.long ckenja.ghook matches 1.. unless score #flag.tpmarker ckenja.ghook matches 1 run tp @s ^ ^ ^0.25
