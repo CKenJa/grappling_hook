@@ -5,5 +5,4 @@
 # @within advancement ckenja.ghook:using_item
 
 advancement revoke @s only ckenja.ghook:using_item
-
-say us
+tag @s add ckenja.ghook.player.using_item

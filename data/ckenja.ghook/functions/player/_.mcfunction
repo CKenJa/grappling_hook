@@ -14,14 +14,7 @@ execute if entity @s[tag=ckenja.ghook.player.ride_pig] run function ckenja.ghook
 execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel
 
 #リセット
-
-    #空気を装填
-    #わざわざ使わなくてもメインハンドとオフハンドみるだけでいい気がするめんどくさい
-    data modify storage player_item_tuner: condition.if set value {tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}
-    data modify storage player_item_tuner: result.merge set value {tag:{ChargedProjectiles:[{},{},{}],Charged:0b}}
-    execute if entity @s run function #player_item_tuner:merge/inventory
-
-    tag @s remove ckenja.ghook.player.shot_crossbow
+    tag @s remove ckenja.ghook.player.using_item
 
     scoreboard players reset #flag.have_hook ckenja.ghook
     scoreboard players reset #flag.hooked ckenja.ghook
@@ -29,4 +22,3 @@ execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghoo
     scoreboard players reset #flag.jet ckenja.ghook
 
     scoreboard players reset #measure ckenja.ghook
-
