@@ -8,13 +8,18 @@
 #
 # @within function ckenja.ghook:feature/move/marker
 
+    execute if score #flag.unmoveable ckenja.ghook matches 1 run say unmoveable
+scoreboard players reset #flag.unmoveable ckenja.ghook
+
 particle enchanted_hit ~ ~ ~
 scoreboard players remove #temp.long ckenja.ghook 25
 scoreboard players add #temp.distance ckenja.ghook 25
 
 #no_collisionフラグが立っておらず、かつ1m以上動いているなら、unmoveableフラグを建てる
 execute if block ~0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision run scoreboard players set #flag.no_collision ckenja.ghook 1
-execute unless score #flag.unmoveable ckenja.ghook matches 1 if score #temp.distance ckenja.ghook matches 100.. run scoreboard players set #flag.unmoveable ckenja.ghook 1
+execute unless score #flag.no_collision ckenja.ghook matches 1 if score #temp.distance ckenja.ghook matches 100.. run scoreboard players set #flag.unmoveable ckenja.ghook 1
+    execute unless score #flag.no_collision ckenja.ghook matches 1 run say collision
+scoreboard players reset #flag.no_collision ckenja.ghook
 
 #ロープの長さより長く距離をとろうとするとunmoveableフラグを建てる
 execute if score #temp.long ckenja.ghook matches ..0 run scoreboard players set #flag.unmoveable ckenja.ghook 1

@@ -41,7 +41,7 @@
     execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:feature/move/marker
 
 #マーカーの座標を豚に代入する(TPだと降ろされるのでPos代入)
-    data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.merge.Pos
+    #data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.merge.Pos
 
 #次tick用の慣性作成。空気抵抗として0.98倍しておく
     execute store result score @s ckenja.ghook.x run data get storage ckenja.ghook.__temp__: pig.merge.Pos[0] 10000
