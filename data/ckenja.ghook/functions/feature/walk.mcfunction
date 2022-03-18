@@ -5,9 +5,9 @@
 # @within function ckenja.ghook:player/main
 
 data modify storage ckenja.ghook.__temp__: pig.data.Motion set from entity @s Motion
-execute store result score $intertia.x ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[0] 9800
-execute store result score $intertia.y ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[1] 9800
-execute store result score $intertia.z ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[2] 9800
+execute store result score $intertia.x ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[0] 9900
+execute store result score $intertia.y ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[1] 9900
+execute store result score $intertia.z ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[2] 9900
 
 execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 100000
 execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 10000
