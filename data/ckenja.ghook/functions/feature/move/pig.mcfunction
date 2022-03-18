@@ -10,7 +10,7 @@
 
 #追加のベクトル(重力とキー操作)
     execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 10000
-    execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 10000
+    execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 1000
     execute store result score $player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[2] 10000
 
 #の和
@@ -26,7 +26,6 @@
     execute store result score $pig.pos.x ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Pos[0] 10000
     execute store result score $pig.pos.y ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Pos[1] 10000
     execute store result score $pig.pos.z ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Pos[2] 10000
-    #tellraw @p [{"text":"x"},{"score":{"name":"$intertia.x","objective":"ckenja.ghook"}},{"text":"y"},{"score":{"name":"$intertia.y","objective":"ckenja.ghook"}},{"text":"z"},{"score":{"name":"$intertia.z","objective":"ckenja.ghook"}}]
 
 #との和
     scoreboard players operation $intertia.x ckenja.ghook += $pig.pos.x ckenja.ghook
@@ -41,7 +40,7 @@
     execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:feature/move/marker
 
 #マーカーの座標を豚に代入する(TPだと降ろされるのでPos代入)
-    #data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.merge.Pos
+    data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.merge.Pos
 
 #次tick用の慣性作成。空気抵抗として0.98倍しておく
     execute store result score @s ckenja.ghook.x run data get storage ckenja.ghook.__temp__: pig.merge.Pos[0] 10000
