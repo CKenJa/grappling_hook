@@ -17,4 +17,3 @@ execute if entity @s[tag=ckenja.ghook.player.ride_pig] as @e[type=pig,tag=ckenja
 data modify storage player_item_tuner: condition.if set value {tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}
 data modify storage player_item_tuner: result.merge set value {tag:{CustomModelData:126000}}
 function #player_item_tuner:merge/inventory
-
