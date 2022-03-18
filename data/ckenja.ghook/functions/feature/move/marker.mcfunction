@@ -11,7 +11,7 @@ data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.P
 
 #ループでマーカーの方向に移動して球上の位置を出す
     tag @s add ckenja.ghook.marker.this
-    execute positioned as @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score @s ckenja.ghook = #temp.id ckenja.ghook facing entity @s feet positioned as @s positioned ^ ^ ^-0.25 as @e[type=marker,tag=ckenja.ghook.marker.this,distance=..120] run function ckenja.ghook:feature/move/loop
+    execute positioned as @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score @s ckenja.ghook = #temp.id ckenja.ghook facing entity @s feet positioned as @s positioned ^ ^ ^-0.125 as @e[type=marker,tag=ckenja.ghook.marker.this,distance=..120] run function ckenja.ghook:feature/move/loop
     tag @s remove ckenja.ghook.marker.this
 
     data modify storage ckenja.ghook.__temp__: pig.merge.Pos set from entity @s Pos
