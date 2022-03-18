@@ -47,10 +47,5 @@ execute if score #flag.no_collision ckenja.ghook matches 1 run function ckenja.g
 #移動できなかったら慣性を半分にして二分探索的なアプローチで次tickに移動を託す
 execute unless score #flag.no_collision ckenja.ghook matches 1 run function ckenja.ghook:feature/move/intertia.half
 
-#デバッグ要員
-    scoreboard players operation $ghook.x ckenja.ghook = @s ckenja.ghook.x
-    scoreboard players operation $ghook.y ckenja.ghook = @s ckenja.ghook.y
-    scoreboard players operation $ghook.z ckenja.ghook = @s ckenja.ghook.z
-
 data modify entity @s Motion set value [0.0,0.0,0.0]
 data modify entity @s Rotation set from storage ckenja.ghook.__temp__: player.data.Rotation

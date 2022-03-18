@@ -5,20 +5,13 @@
 # @within function ckenja.ghook:tick
 
 execute unless score @s ckenja.ghook matches -2147483648..2147483647 run function ckenja.ghook:player/id
-
 #座標をロープ長検知に使うのでatはつけない
 execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:hook/_
-
 execute if entity @s[tag=ckenja.ghook.player.ride_pig] run function ckenja.ghook:player/ride
-
-execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel
+execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel/_
 
 #リセット
     tag @s remove ckenja.ghook.player.using_item
-
     scoreboard players reset #flag.have_hook ckenja.ghook
     scoreboard players reset #flag.hooked ckenja.ghook
     scoreboard players reset #flag.hooked.init ckenja.ghook
-    scoreboard players reset #flag.jet ckenja.ghook
-
-    scoreboard players reset #measure ckenja.ghook
