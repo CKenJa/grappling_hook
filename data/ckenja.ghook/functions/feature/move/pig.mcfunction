@@ -4,9 +4,12 @@
 #
 # @within function ckenja.ghook:feature/move/_
 
+#アニメーションでずれるので移動前にパーティクルを出す
+    execute positioned as @s run particle cloud ~ ~ ~
+
 #慣性。ないならMotionを参照する
     execute if score #flag.hooked.init ckenja.ghook matches 1 run function ckenja.ghook:feature/move/motion
-    execute unless score #flag.hooked.init ckenja.ghook matches 1 run function ckenja.ghook:feature/move/intertia
+    execute unless score #flag.hooked.init ckenja.ghook matches 1 run function ckenja.ghook:feature/move/intertia.get
 
 #追加のベクトル(重力とキー操作)
     execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 10000
@@ -39,28 +42,15 @@
     summon marker ~ ~ ~ {Tags:["ckenja.ghook.marker"]}
     execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:feature/move/marker
 
-#マーカーの座標を豚に代入する(TPだと降ろされるのでPos代入)
-    data modify entity @s Pos set from storage ckenja.ghook.__temp__: pig.merge.Pos
-
-#次tick用の慣性作成。空気抵抗として0.98倍しておく
-    execute store result score @s ckenja.ghook.x run data get storage ckenja.ghook.__temp__: pig.merge.Pos[0] 10000
-    execute store result score @s ckenja.ghook.y run data get storage ckenja.ghook.__temp__: pig.merge.Pos[1] 10000
-    execute store result score @s ckenja.ghook.z run data get storage ckenja.ghook.__temp__: pig.merge.Pos[2] 10000
-    scoreboard players operation @s ckenja.ghook.x -= $pig.pos.x ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.y -= $pig.pos.y ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.z -= $pig.pos.z ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.x *= #98 ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.y *= #98 ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.z *= #98 ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.x /= #100 ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.y /= #100 ckenja.ghook
-    scoreboard players operation @s ckenja.ghook.z /= #100 ckenja.ghook
+#移動できるならPos代入して次tick用の慣性作成
+execute if score #flag.no_collision ckenja.ghook matches 1 run function ckenja.ghook:feature/move/intertia.make
+#移動できなかったら慣性を半分にして二分探索的なアプローチで次tickに移動を託す
+execute unless score #flag.no_collision ckenja.ghook matches 1 run function ckenja.ghook:feature/move/intertia.half
 
 #デバッグ要員
     scoreboard players operation $ghook.x ckenja.ghook = @s ckenja.ghook.x
     scoreboard players operation $ghook.y ckenja.ghook = @s ckenja.ghook.y
     scoreboard players operation $ghook.z ckenja.ghook = @s ckenja.ghook.z
 
-execute positioned as @s run particle cloud ~ ~ ~
 data modify entity @s Motion set value [0.0,0.0,0.0]
 data modify entity @s Rotation set from storage ckenja.ghook.__temp__: player.data.Rotation

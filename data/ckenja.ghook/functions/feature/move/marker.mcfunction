@@ -13,7 +13,6 @@ data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.P
     tag @s add ckenja.ghook.marker.this
     execute positioned as @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score @s ckenja.ghook = #temp.id ckenja.ghook facing entity @s feet positioned as @s positioned ^ ^ ^-0.25 as @e[type=marker,tag=ckenja.ghook.marker.this,distance=..120] run function ckenja.ghook:feature/move/loop
     tag @s remove ckenja.ghook.marker.this
-    scoreboard players reset #flag.no_collision ckenja.ghook
 
     data modify storage ckenja.ghook.__temp__: pig.merge.Pos set from entity @s Pos
     execute at @s run particle flame ~ ~ ~ 0 0 0 0 1 force @a
