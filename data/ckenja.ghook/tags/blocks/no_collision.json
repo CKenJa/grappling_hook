@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "#ckenja.ghook.smart_motion:no_collision"
+    "#ckenja.ghook.smart_motion:no_collision",
+    "#minecraft:carpets",
+    "minecraft:moss_carpet",
+    "minecraft:ladder",
+    "#minecraft:trapdoors",
+    "#minecraft:doors"
   ]
 }
