@@ -20,3 +20,4 @@ execute if score #nofall_timer ckenja.ghook matches 3.. run summon minecraft:are
 
 #リセット
     scoreboard players reset #flag.jet ckenja.ghook
+    scoreboard players reset #flag.no_collision ckenja.ghook

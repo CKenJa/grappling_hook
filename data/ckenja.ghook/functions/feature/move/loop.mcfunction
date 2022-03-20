@@ -10,7 +10,6 @@
 
 scoreboard players reset #flag.unmoveable ckenja.ghook
 
-particle enchanted_hit ~ ~ ~
 scoreboard players remove #temp.long ckenja.ghook 125
 
 #ロープの長さより長く距離をとろうとするとunmoveableフラグを建てる

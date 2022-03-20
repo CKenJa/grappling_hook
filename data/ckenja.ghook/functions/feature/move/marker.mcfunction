@@ -7,7 +7,7 @@
 data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.Pos
 
 #デバッグ
-    execute at @s run particle soul_fire_flame ~ ~ ~ 0 0 0 0 1 force @a
+    #execute at @s run particle soul_fire_flame ~ ~ ~ 0 0 0 0 1 force @a
 
 #ループでマーカーの方向に移動して球上の位置を出す
     tag @s add ckenja.ghook.marker.this
@@ -15,6 +15,6 @@ data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.P
     tag @s remove ckenja.ghook.marker.this
 
     data modify storage ckenja.ghook.__temp__: pig.merge.Pos set from entity @s Pos
-    execute at @s run particle flame ~ ~ ~ 0 0 0 0 1 force @a
+    #execute at @s run particle flame ~ ~ ~ 0 0 0 0 1 force @a
 
 kill @s

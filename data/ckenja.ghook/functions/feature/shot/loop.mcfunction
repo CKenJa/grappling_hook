@@ -4,6 +4,8 @@
 #
 # @within function ckenja.ghook:feature/shot/init
 
+particle crit ~ ~ ~
+
 scoreboard players add #measure ckenja.ghook 250
 execute store success score #flag.hooked.init ckenja.ghook run execute unless block ~ ~ ~ #ckenja.ghook:no_collision
 execute if score #flag.hooked.init ckenja.ghook matches 1 run function ckenja.ghook:feature/shot/hook
