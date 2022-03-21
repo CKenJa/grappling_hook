@@ -12,9 +12,9 @@
     execute unless score #flag.hooked.init ckenja.ghook matches 1 run function ckenja.ghook:feature/move/intertia.get
 
 #追加のベクトル(重力とキー操作)
-    execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 10000
-    execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 10000
-    execute store result score $player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[2] 10000
+    execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 5000
+    execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 5000
+    execute store result score $player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[2] 5000
 
 #の和
     scoreboard players operation $intertia.x ckenja.ghook += $player.motion.x ckenja.ghook

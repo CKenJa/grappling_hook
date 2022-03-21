@@ -9,12 +9,11 @@ execute store result score $intertia.x ckenja.ghook run data get storage ckenja.
 execute store result score $intertia.y ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[1] 10000
 execute store result score $intertia.z ckenja.ghook run data get storage ckenja.ghook.__temp__: pig.data.Motion[2] 10000
 
-execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 100000
-execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 10000
-execute store result score $player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[2] 100000
+#Motionは重力が自動でつけられるのでデータパック側で重力はつけないように
+execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 80000
+execute store result score $player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[2] 80000
 
 scoreboard players operation $intertia.x ckenja.ghook += $player.motion.x ckenja.ghook
-scoreboard players operation $intertia.y ckenja.ghook += $player.motion.y ckenja.ghook
 scoreboard players operation $intertia.z ckenja.ghook += $player.motion.z ckenja.ghook
 
 execute store result storage ckenja.ghook.__temp__: pig.merge.Motion[0] double 0.0001 run scoreboard players get $intertia.x ckenja.ghook
