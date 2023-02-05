@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "#ckenja.ghook.smart_motion:no_collision",
-    "#minecraft:carpets",
+    "#minecraft:wool_carpets",
     "minecraft:moss_carpet",
     "minecraft:ladder",
     "#minecraft:trapdoors",
