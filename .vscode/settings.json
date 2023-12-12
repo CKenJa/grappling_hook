@@ -1,7 +1,7 @@
 {
-    "datapack.env.cmdVersion": "1.18",
-    "datapack.env.dataVersion": "1.18",
-    "datapack.env.jsonVersion": "1.18",
+    "datapack.env.cmdVersion": "1.20.2",
+    "datapack.env.dataVersion": "1.20.2",
+    "datapack.env.jsonVersion": "1.20.2",
 
     "datapack.env.permissionLevel": 2,
     "datapack.env.dependsOnVanilla": true,

@@ -1,8 +1,8 @@
-#> ckenja.ghook:feature/move/intertia.get
+#> ckenja.ghook:feature/swing/intertia.get
 #
 #
 #
-# @within function ckenja.ghook:feature/move/pig
+# @within function ckenja.ghook:feature/swing/_
 
 scoreboard players operation $intertia.x ckenja.ghook = @s ckenja.ghook.x
 scoreboard players operation $intertia.y ckenja.ghook = @s ckenja.ghook.y

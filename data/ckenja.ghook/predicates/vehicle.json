@@ -3,8 +3,8 @@
     "entity": "this",
     "predicate": {
       "vehicle": {
-        "type": "minecraft:pig"
+        "type": "minecraft:item_display",
+        "nbt": "{Tags:[\"ckenja.ghook.vehicle\"]}"
       }
     }
   }
-  

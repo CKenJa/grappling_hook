@@ -2,7 +2,7 @@
 #
 #
 #
-# @within function ckenja.ghook:player/_
+# @within function ckenja.ghook:player/tick
 
 #> player-id
 #@private

@@ -2,11 +2,10 @@
 #
 #
 #
-# @within function ckenja.ghook:feature/shot/init
+# @within ckenja.ghook:feature/shot/**
 
-particle crit ~ ~ ~
+scoreboard players add @s ckenja.ghook.l 250
+execute store success score #flag.hook_shot_this_tick ckenja.ghook run execute unless block ^ ^ ^0.25 #ckenja.ghook:no_collision
+execute if score #flag.hook_shot_this_tick ckenja.ghook matches 1 align xyz positioned ~0.5 ~0.5 ~0.5 summon bat run function ckenja.ghook:feature/shot/hook
 
-scoreboard players add #measure ckenja.ghook 250
-execute store success score #flag.hooked.init ckenja.ghook run execute unless block ~ ~ ~ #ckenja.ghook:no_collision
-execute if score #flag.hooked.init ckenja.ghook matches 1 run function ckenja.ghook:feature/shot/hook
-execute if score #flag.hooked.init ckenja.ghook matches 0 positioned ^ ^ ^0.25 if entity @s[distance=..104] run function ckenja.ghook:feature/shot/loop
+execute if score #flag.hook_shot_this_tick ckenja.ghook matches 0 positioned ^ ^ ^0.25 if entity @s[distance=..104] run function ckenja.ghook:feature/shot/loop
