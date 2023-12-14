@@ -34,6 +34,5 @@ execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghoo
     scoreboard players reset #flag.hook_shot_this_tick ckenja.ghook
     scoreboard players reset #flag.have_hook ckenja.ghook
     scoreboard players reset #flag.jet ckenja.ghook
-    scoreboard players reset #flag.no_collision ckenja.ghook
     scoreboard players reset #flag.hook.kill ckenja.ghook
 

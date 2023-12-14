@@ -10,18 +10,17 @@
 
 scoreboard players reset #flag.unmoveable ckenja.ghook
 
-scoreboard players remove #temp.long ckenja.ghook 125
+scoreboard players remove #temp.feature.swing.loop ckenja.ghook 125
+
+#次のtickのロープの長さを決める
+scoreboard players add #temp.feature.swing.updated_length ckenja.ghook 125
 
 #ロープの長さより長く距離をとろうとするとunmoveableフラグを建てる
-execute if score #temp.long ckenja.ghook matches ..0 run scoreboard players set #flag.unmoveable ckenja.ghook 1
+execute if score #temp.feature.swing.loop ckenja.ghook matches ..0 run scoreboard players set #flag.unmoveable ckenja.ghook 1
 
 #ジェットモードの場合、1単位以内にマーカーがあればその座標になる。
 execute if score #flag.have_hook ckenja.ghook matches 1 if entity @s[distance=..0.125] run scoreboard players set #flag.unmoveable ckenja.ghook 1
 
-#unmoveableフラグは、その地点に移動できない場合に建てる。
+#unmoveableフラグは、次の地点に移動できない場合に建てる。
+execute if score #flag.unmoveable ckenja.ghook matches 1 run tp @s ~ ~ ~
 execute unless score #flag.unmoveable ckenja.ghook matches 1 positioned ^ ^ ^-0.125 run function ckenja.ghook:feature/swing/loop
-
-#ブタ座標側から衝突判定を取る
-#既に位置を決定していたら何もしない
-execute unless score #flag.no_collision ckenja.ghook matches 1 if block ~0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision run function ckenja.ghook:feature/swing/no_collision
-execute unless score #flag.no_collision ckenja.ghook matches 1 run scoreboard players add #temp.long ckenja.ghook 125
