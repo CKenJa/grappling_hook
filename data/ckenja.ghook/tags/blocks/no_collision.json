@@ -6,6 +6,8 @@
     "minecraft:moss_carpet",
     "minecraft:ladder",
     "#minecraft:trapdoors",
-    "#minecraft:doors"
+    "#minecraft:doors",
+    "water",
+    "lava"
   ]
 }
