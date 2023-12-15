@@ -1,6 +1,7 @@
 {
   "values": [
     "#ckenja.ghook.smart_motion:ignore_collision",
+    "grass",
     "frogspawn",
     "sculk_vein",
     "mangrove_sign",
