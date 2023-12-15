@@ -12,4 +12,5 @@ data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.P
 #衝突判定を取る
 #execute at @s as @a on vehicle run tp @s ~ ~ ~
 execute facing entity @s feet positioned ~ ~ ~ run function ckenja.ghook:feature/swing/collision
+scoreboard players reset #feature.swing.collision.neared ckenja.ghook
 kill @s
