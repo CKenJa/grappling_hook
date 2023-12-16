@@ -14,40 +14,49 @@ scoreboard players operation #temp.feature.swing.loop ckenja.ghook = @s ckenja.g
     execute unless score #flag.hook_shot_this_tick ckenja.ghook matches 1 run function ckenja.ghook:feature/swing/intertia.get
 
 #追加のベクトル(重力とキー操作)
-    execute store result score $player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 5000
-    execute store result score $player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 5000
-    execute store result score $player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[2] 5000
+    execute store result score #player.motion.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[0] 5000
+    execute store result score #player.motion.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[1] 5000
+    execute store result score #player.motion.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Motion[2] 5000
 
 #の和
-    scoreboard players operation $intertia.x ckenja.ghook += $player.motion.x ckenja.ghook
-    scoreboard players operation $intertia.y ckenja.ghook += $player.motion.y ckenja.ghook
-    scoreboard players operation $intertia.z ckenja.ghook += $player.motion.z ckenja.ghook
+    scoreboard players operation #intertia.x ckenja.ghook += #player.motion.x ckenja.ghook
+    scoreboard players operation #intertia.y ckenja.ghook += #player.motion.y ckenja.ghook
+    scoreboard players operation #intertia.z ckenja.ghook += #player.motion.z ckenja.ghook
 
-#長押ししてたらジェットのベクトルも追加
-    #execute if score #flag.jet ckenja.ghook matches 1 run function ckenja.ghook:feature/swing/jet
+#運動方向のベクトルとして保存
+    scoreboard players operation #moving_vector.x ckenja.ghook = #intertia.x ckenja.ghook
+    scoreboard players operation #moving_vector.y ckenja.ghook = #intertia.y ckenja.ghook
+    scoreboard players operation #moving_vector.z ckenja.ghook = #intertia.z ckenja.ghook
+
 
 #現在座標
-    execute store result score $player.pos.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[0] 10000
-    execute store result score $player.pos.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[1] 10000
-    execute store result score $player.pos.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[2] 10000
+    execute store result score #player.pos.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[0] 10000
+    execute store result score #player.pos.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[1] 10000
+    execute store result score #player.pos.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[2] 10000
 
 #との和
-    scoreboard players operation $intertia.x ckenja.ghook += $player.pos.x ckenja.ghook
-    scoreboard players operation $intertia.y ckenja.ghook += $player.pos.y ckenja.ghook
-    scoreboard players operation $intertia.z ckenja.ghook += $player.pos.z ckenja.ghook
+    scoreboard players operation #intertia.x ckenja.ghook += #player.pos.x ckenja.ghook
+    scoreboard players operation #intertia.y ckenja.ghook += #player.pos.y ckenja.ghook
+    scoreboard players operation #intertia.z ckenja.ghook += #player.pos.z ckenja.ghook
 
 #その座標にマーカーを出し、フックからロープ距離分マーカー方向に進んで、その場所の座標を記憶
     data modify storage ckenja.ghook.__temp__: marker.merge.Pos set value [0.0,0.0,0.0]
-    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[0] double 0.0001 run scoreboard players get $intertia.x ckenja.ghook
-    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[1] double 0.0001 run scoreboard players get $intertia.y ckenja.ghook
-    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get $intertia.z ckenja.ghook
+    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[0] double 0.0001 run scoreboard players get #intertia.x ckenja.ghook
+    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[1] double 0.0001 run scoreboard players get #intertia.y ckenja.ghook
+    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get #intertia.z ckenja.ghook
     summon marker ~ ~ ~ {Tags:["ckenja.ghook.marker"]}
     tag @s add ckenja.ghook.feature.swing.player
     execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:feature/swing/marker
     tag @s remove ckenja.ghook.feature.swing.player
     
 #移動できるならPos代入して次tick用の慣性作成
-function ckenja.ghook:feature/swing/intertia.make
+data modify storage ckenja.ghook.__temp__: player.feature.swing.Pos set from entity @s Pos
+execute store result score @s ckenja.ghook.x run data get storage ckenja.ghook.__temp__: player.feature.swing.Pos[0] 10000
+execute store result score @s ckenja.ghook.y run data get storage ckenja.ghook.__temp__: player.feature.swing.Pos[1] 10000
+execute store result score @s ckenja.ghook.z run data get storage ckenja.ghook.__temp__: player.feature.swing.Pos[2] 10000
+scoreboard players operation @s ckenja.ghook.x -= #player.pos.x ckenja.ghook
+scoreboard players operation @s ckenja.ghook.y -= #player.pos.y ckenja.ghook
+scoreboard players operation @s ckenja.ghook.z -= #player.pos.z ckenja.ghook
 #移動できなかったら当たり判定処理
 #execute unless score #flag.no_collision ckenja.ghook matches 1 run function ckenja.ghook:feature/swing/intertia.half
 

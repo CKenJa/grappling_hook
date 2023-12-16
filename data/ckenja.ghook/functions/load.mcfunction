@@ -12,4 +12,5 @@ scoreboard objectives add ckenja.ghook.l dummy
 
 scoreboard players set #98 ckenja.ghook 98
 scoreboard players set #100 ckenja.ghook 100
+scoreboard players set #10000 ckenja.ghook 10000
 scoreboard players set #2 ckenja.ghook 2
