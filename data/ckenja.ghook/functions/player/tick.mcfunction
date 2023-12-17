@@ -13,7 +13,7 @@ execute unless score @s ckenja.ghook matches -2147483648..2147483647 run functio
 scoreboard players operation #temp.id ckenja.ghook = @s ckenja.ghook
 
 #落下ダメージの無効化
-execute if score #nofall_timer ckenja.ghook matches 3.. run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:6,Age:4,Effects:[{Id:28,Amplifier:0b,Duration:2,ShowParticles:0b}]}
+execute if score #nofall_timer ckenja.ghook matches 3.. run summon area_effect_cloud ~ ~ ~ {Duration:6,Age:4,effects:[{id:"minecraft:slow_falling",amplifier:0b,duration:2,show_particles:0b}]}
 
 #座標をロープ長検知に使うのでatはつけない
 execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:hook/tick
