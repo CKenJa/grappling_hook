@@ -12,6 +12,10 @@
                 "tag": "{CustomModelData:126000,Unbreakable:true,ctc:{id:\"ghook\",from:\"ckenja.ghook:\"}}"
               },
               {
+                "function": "set_attributes",
+                "modifiers": [{"amount": -10,"attribute": "generic.attack_speed","id": "3ac3f8f8-6407-491a-ad90-c7305393668c","name": "アイテム書き換え時にアイテムが下に下がるのを防ぐ","operation": "addition","slot": "mainhand"}]
+              },
+              {
                 "function": "minecraft:set_name",
                 "name": {
                   "text": "Grappling hook",

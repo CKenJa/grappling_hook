@@ -5,6 +5,7 @@
 # @within function ckenja.ghook:player/tick
 
 scoreboard players operation #temp.feature.swing.loop ckenja.ghook = @s ckenja.ghook.l
+data modify storage ckenja.ghook.__temp__: player.data.Motion set from entity @s Motion
 
 #アニメーションでずれるので移動前にパーティクルを出す
     execute positioned as @s run particle cloud ~ ~ ~
@@ -27,12 +28,6 @@ scoreboard players operation #temp.feature.swing.loop ckenja.ghook = @s ckenja.g
     scoreboard players operation #moving_vector.x ckenja.ghook = #intertia.x ckenja.ghook
     scoreboard players operation #moving_vector.y ckenja.ghook = #intertia.y ckenja.ghook
     scoreboard players operation #moving_vector.z ckenja.ghook = #intertia.z ckenja.ghook
-
-
-#現在座標
-    execute store result score #player.pos.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[0] 10000
-    execute store result score #player.pos.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[1] 10000
-    execute store result score #player.pos.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[2] 10000
 
 #との和
     scoreboard players operation #intertia.x ckenja.ghook += #player.pos.x ckenja.ghook
@@ -64,3 +59,4 @@ scoreboard players operation @s ckenja.ghook.z -= #player.pos.z ckenja.ghook
 scoreboard players operation @s ckenja.ghook.l = #temp.feature.swing.updated_length ckenja.ghook
 scoreboard players reset #temp.feature.swing.updated_length ckenja.ghook
 
+execute rotated as @s on vehicle positioned as @s run tp @s ~ ~ ~ ~ 0

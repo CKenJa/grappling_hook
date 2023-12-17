@@ -4,6 +4,11 @@
 #
 # @within function ckenja.ghook:tick
 
+data modify storage ckenja.ghook.__temp__: player.data.Pos set from entity @s Pos
+execute store result score #player.pos.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[0] 10000
+execute store result score #player.pos.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[1] 10000
+execute store result score #player.pos.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[2] 10000
+data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity @s Rotation
 execute unless score @s ckenja.ghook matches -2147483648..2147483647 run function ckenja.ghook:player/id
 scoreboard players operation #temp.id ckenja.ghook = @s ckenja.ghook
 
@@ -16,7 +21,7 @@ execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id c
 #二回クリックし終わったら、flag.hook.killを立てる。あとでフック収納して慣性をMotion代入
 execute if entity @s[tag=ckenja.ghook.player.using_item.before,tag=!ckenja.ghook.player.using_item] run function ckenja.ghook:player/check_quit_using
 
-execute if score #flag.have_hook ckenja.ghook matches 1 unless predicate ckenja.ghook:vehicle run scoreboard players set #flag.hook.kill ckenja.ghook 1
+execute unless predicate ckenja.ghook:vehicle run function ckenja.ghook:player/not_vehicle
 
 #クリック検知
 execute if entity @s[tag=ckenja.ghook.player.using_item] run function ckenja.ghook:player/using_item
@@ -24,10 +29,11 @@ execute if entity @s[tag=ckenja.ghook.player.using_item] run function ckenja.gho
 execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel
 
 #フックがあればスイング計算
-    data modify storage ckenja.ghook.__temp__: player.data.Pos set from entity @s Pos
-    data modify storage ckenja.ghook.__temp__: player.data.Motion set from entity @s Motion
-    data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity @s Rotation
     execute if score #flag.have_hook ckenja.ghook matches 1 run function ckenja.ghook:feature/swing/_
+
+scoreboard players operation @s ckenja.ghook.pos.x = #player.pos.x ckenja.ghook
+scoreboard players operation @s ckenja.ghook.pos.y = #player.pos.y ckenja.ghook
+scoreboard players operation @s ckenja.ghook.pos.z = #player.pos.z ckenja.ghook
 
 #リセット
     tag @s remove ckenja.ghook.player.using_item
@@ -35,4 +41,3 @@ execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghoo
     scoreboard players reset #flag.have_hook ckenja.ghook
     scoreboard players reset #flag.jet ckenja.ghook
     scoreboard players reset #flag.hook.kill ckenja.ghook
-
