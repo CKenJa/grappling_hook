@@ -8,7 +8,7 @@ scoreboard players operation #temp.feature.swing.loop ckenja.ghook = @s ckenja.g
 data modify storage ckenja.ghook.__temp__: player.data.Motion set from entity @s Motion
 
 #アニメーションでずれるので移動前にパーティクルを出す
-    execute positioned as @s run particle cloud ~ ~ ~
+    execute at @s rotated ~ 0 run particle cloud ^ ^0.6 ^-0.125
 
 #慣性。ないならMotionを参照する
     execute if score #flag.hook_shot_this_tick ckenja.ghook matches 1 run function ckenja.ghook:feature/swing/motion
@@ -60,3 +60,4 @@ scoreboard players operation @s ckenja.ghook.l = #temp.feature.swing.updated_len
 scoreboard players reset #temp.feature.swing.updated_length ckenja.ghook
 
 execute rotated as @s on vehicle positioned as @s run tp @s ~ ~ ~ ~ 0
+execute positioned as @s run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.125 0.67
