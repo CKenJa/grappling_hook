@@ -60,4 +60,4 @@ scoreboard players operation @s ckenja.ghook.l = #temp.feature.swing.updated_len
 scoreboard players reset #temp.feature.swing.updated_length ckenja.ghook
 
 execute rotated as @s on vehicle positioned as @s run tp @s ~ ~ ~ ~ 0
-execute positioned as @s run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.125 0.67
+execute positioned as @s run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.125 1

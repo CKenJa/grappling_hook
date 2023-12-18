@@ -14,6 +14,6 @@ tag @s remove ckenja.ghook.feature.shot.player
 
 scoreboard players set #flag.hook_shot_this_tick ckenja.ghook 1
 
-#execute positioned as @s run playsound minecraft:block.iron_trapdoor.open player @a ~ ~ ~ 1 1.5
-execute positioned as @s run playsound minecraft:entity.blaze.hurt player @a ~ ~ ~ 1 1.67
-execute positioned as @s run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.5 0.67
+execute positioned as @s run playsound minecraft:block.iron_trapdoor.open player @a ~ ~ ~ 0.75 1.5
+execute positioned as @s run playsound minecraft:entity.blaze.hurt player @a ~ ~ ~ 0.5 1.33
+execute positioned as @s run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.25 0.67
