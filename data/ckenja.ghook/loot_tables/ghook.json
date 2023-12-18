@@ -9,7 +9,7 @@
             "functions": [
               {
                 "function": "minecraft:set_nbt",
-                "tag": "{CustomModelData:126000,Unbreakable:true,ctc:{id:\"ghook\",from:\"ckenja.ghook:\"},HideFlags:2}"
+                "tag": "{CustomModelData:126000,Unbreakable:true,ctc:{id:\"ghook\",from:\"ckenja.ghook:\"},HideFlags:6}"
               },
               {
                 "function": "set_attributes",
