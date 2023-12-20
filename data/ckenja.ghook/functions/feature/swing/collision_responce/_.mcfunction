@@ -2,7 +2,7 @@
 #
 #
 #
-# @within function ckenja.ghook:feature/swing/collision_detection
+# @within function ckenja.ghook:feature/swing/collision_detection/_
 
     scoreboard players set #feature.swing.nearest.range ckenja.ghook 2147483647
 
@@ -121,4 +121,4 @@
 
 #衝突向きのベクトルを消したうえで力を再計算する。
     #execute at @s run function ckenja.ghook:feature/swing/collision_responce/_2
-    execute at @s run function ckenja.ghook:feature/swing/tp
+    execute at @s run function ckenja.ghook:feature/swing/collision_detection/tp

@@ -4,7 +4,6 @@
 #
 # @within function ckenja.ghook:feature/swing/collision_responce/looking_at_function
 
-setblock ~ ~ ~ bedrock
 data modify storage ckenja.ghook.__temp__: swing.collision_responce.direction set from storage ckenja.looking_at_function:_ directionList[-1].value
 scoreboard players set #feature.swing.success_get_intersection ckenja.ghook 1
 
