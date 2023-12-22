@@ -20,3 +20,4 @@ scoreboard players set #2 ckenja.ghook 2
 
 execute in overworld run forceload add -1 -1 0 0
 data modify storage ckenja.ghook.__temp__: marker.merge.Pos set value [0.0,0.0,0.0]
+data modify storage ckenja.ghook.__temp__: player.not_vehicle.Pos.0 set value [0.0,0.0,0.0]

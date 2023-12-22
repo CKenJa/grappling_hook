@@ -35,7 +35,6 @@ data modify storage ckenja.ghook.__temp__: player.data.Motion set from entity @s
     scoreboard players operation #intertia.z ckenja.ghook += #player.pos.z ckenja.ghook
 
 #その座標にマーカーを出し、フックからロープ距離分マーカー方向に進んで、その場所の座標を記憶
-    data modify storage ckenja.ghook.__temp__: marker.merge.Pos set value [0.0,0.0,0.0]
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[0] double 0.0001 run scoreboard players get #intertia.x ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[1] double 0.0001 run scoreboard players get #intertia.y ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get #intertia.z ckenja.ghook
