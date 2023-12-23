@@ -1,10 +1,6 @@
 #> ckenja.ghook:feature/swing/loop
 #
 # 当たり判定チェックとか挟みつつループ
-# 100m以上離れているかつ衝突: 終了
-# jet使うかつmarkerを通り過ぎる: 終了
-# ロープ長まで行った: 終了
-# そうでなければ次のループ
 #
 # @within function ckenja.ghook:feature/swing/marker
 
