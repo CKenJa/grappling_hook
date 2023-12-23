@@ -23,7 +23,7 @@ execute positioned ^ ^ ^0.125 if block ~0.3 ~ ~0.3 #ckenja.ghook:no_collision if
 execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 0 if entity @s[distance=..0.125] at @s run function ckenja.ghook:feature/swing/collision_detection/check_and_tp
 
 #次の探査地点に空間がないなら衝突処理をする
-#execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 0 run function ckenja.ghook:feature/swing/collision_responce/_
+execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 0 run function ckenja.ghook:feature/swing/collision_responce/_
 
 #次の探査地点に空間はあるが、移動予定地点が後ろならそこを見てみる
 execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 1 if entity @s[distance=..0.125] run function ckenja.ghook:feature/swing/collision_detection/check_back

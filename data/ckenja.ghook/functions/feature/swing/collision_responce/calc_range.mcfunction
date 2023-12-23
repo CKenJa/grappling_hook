@@ -1,3 +1,7 @@
+scoreboard players operation #feature.swing.intersection.x ckenja.ghook -= #feature.swing.relative.x ckenja.ghook
+scoreboard players operation #feature.swing.intersection.y ckenja.ghook -= #feature.swing.relative.y ckenja.ghook
+scoreboard players operation #feature.swing.intersection.z ckenja.ghook -= #feature.swing.relative.z ckenja.ghook
+
 #現在の座標との距離を求める
 scoreboard players operation #feature.swing.temp.x ckenja.ghook = #feature.swing.intersection.x ckenja.ghook
 scoreboard players operation #feature.swing.temp.x ckenja.ghook -= #player.pos.x ckenja.ghook
