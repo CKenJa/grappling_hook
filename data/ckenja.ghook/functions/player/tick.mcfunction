@@ -32,7 +32,7 @@ execute if entity @s[tag=ckenja.ghook.player.using_item] run function ckenja.gho
 execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel/_
 
 #フックがあればスイング計算
-    execute if score #flag.have_hook ckenja.ghook matches 1 run function ckenja.ghook:feature/swing/_
+execute if score #flag.have_hook ckenja.ghook matches 1 at @s run function ckenja.ghook:feature/swing/_
 
 scoreboard players operation @s ckenja.ghook.pos.x = #player.pos.x ckenja.ghook
 scoreboard players operation @s ckenja.ghook.pos.y = #player.pos.y ckenja.ghook
