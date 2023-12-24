@@ -9,6 +9,7 @@ scoreboard objectives add ckenja.ghook.x dummy
 scoreboard objectives add ckenja.ghook.y dummy
 scoreboard objectives add ckenja.ghook.z dummy
 scoreboard objectives add ckenja.ghook.l dummy
+scoreboard objectives add ckenja.ghook.c dummy
 scoreboard objectives add ckenja.ghook.pos.x dummy
 scoreboard objectives add ckenja.ghook.pos.y dummy
 scoreboard objectives add ckenja.ghook.pos.z dummy

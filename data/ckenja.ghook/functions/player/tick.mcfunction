@@ -9,8 +9,8 @@ execute store result score #player.pos.x ckenja.ghook run data get storage ckenj
 execute store result score #player.pos.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[1] 10000
 execute store result score #player.pos.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[2] 10000
 data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity @s Rotation
-execute unless score @s ckenja.ghook matches -2147483648..2147483647 run function ckenja.ghook:player/id
 scoreboard players operation #temp.id ckenja.ghook = @s ckenja.ghook
+execute if score @s ckenja.ghook.c matches 1.. run scoreboard players remove @s ckenja.ghook.c 1
 
 #落下ダメージの無効化
 execute if score #nofall_timer ckenja.ghook matches 3.. run summon area_effect_cloud ~ ~ ~ {Duration:6,Age:4,effects:[{id:"minecraft:slow_falling",amplifier:0b,duration:2,show_particles:0b}]}

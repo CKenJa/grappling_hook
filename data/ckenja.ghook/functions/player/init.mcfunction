@@ -2,7 +2,7 @@
 #
 #
 #
-# @within function ckenja.ghook:player/tick
+# @within advancement ckenja.ghook:player.init
 
 #> player-id
 #@private
@@ -10,3 +10,4 @@
 
 scoreboard players operation @s ckenja.ghook = #id ckenja.ghook
 scoreboard players add #id ckenja.ghook 1
+scoreboard players set @s ckenja.ghook.c 0
