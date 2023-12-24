@@ -8,7 +8,6 @@ data modify storage ckenja.ghook.__temp__: player.data.Pos set from entity @s Po
 execute store result score #player.pos.x ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[0] 10000
 execute store result score #player.pos.y ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[1] 10000
 execute store result score #player.pos.z ckenja.ghook run data get storage ckenja.ghook.__temp__: player.data.Pos[2] 10000
-data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity @s Rotation
 scoreboard players operation #temp.id ckenja.ghook = @s ckenja.ghook
 execute if score @s ckenja.ghook.c matches 1.. run scoreboard players remove @s ckenja.ghook.c 1
 
