@@ -1,3 +1,8 @@
+#> ckenja.ghook:feature/swing/collision_responce/update_nearest
+#
+#
+#
+# @within function ckenja.ghook:feature/swing/collision_responce/_
 
 scoreboard players operation #feature.swing.nearest.x ckenja.ghook = #feature.swing.intersection.x ckenja.ghook
 scoreboard players operation #feature.swing.nearest.y ckenja.ghook = #feature.swing.intersection.y ckenja.ghook

@@ -29,7 +29,7 @@ execute unless score #flag.have_hook ckenja.ghook matches 1 run function ckenja.
 #クリック検知
 execute if entity @s[tag=ckenja.ghook.player.using_item] run function ckenja.ghook:player/using_item
 
-execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel
+execute if score #flag.hook.kill ckenja.ghook matches 1 run function ckenja.ghook:feature/reel/_
 
 #フックがあればスイング計算
     execute if score #flag.have_hook ckenja.ghook matches 1 run function ckenja.ghook:feature/swing/_

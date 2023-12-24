@@ -1,3 +1,9 @@
+#> ckenja.ghook:feature/swing/collision_responce/calc_range
+#
+#
+#
+# @within function ckenja.ghook:feature/swing/collision_responce/get_intersection
+
 scoreboard players operation #feature.swing.intersection.x ckenja.ghook -= #feature.swing.relative.x ckenja.ghook
 scoreboard players operation #feature.swing.intersection.y ckenja.ghook -= #feature.swing.relative.y ckenja.ghook
 scoreboard players operation #feature.swing.intersection.z ckenja.ghook -= #feature.swing.relative.z ckenja.ghook

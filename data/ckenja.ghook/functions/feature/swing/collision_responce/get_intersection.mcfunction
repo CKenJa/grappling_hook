@@ -1,3 +1,9 @@
+#> ckenja.ghook:feature/swing/collision_responce/get_intersection
+#
+#
+#
+# @within function ckenja.ghook:feature/swing/collision_responce/_
+
 scoreboard players operation #start_ray.x ckenja.ghook = #marker.pos.x ckenja.ghook
 scoreboard players operation #start_ray.y ckenja.ghook = #marker.pos.y ckenja.ghook
 scoreboard players operation #start_ray.z ckenja.ghook = #marker.pos.z ckenja.ghook

@@ -33,9 +33,8 @@ data modify storage ckenja.ghook.__temp__: player.data.Motion set from entity @s
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[0] double 0.0001 run scoreboard players get #intertia.x ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[1] double 0.0001 run scoreboard players get #intertia.y ckenja.ghook
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get #intertia.z ckenja.ghook
-    summon marker ~ ~ ~ {Tags:["ckenja.ghook.marker"]}
     tag @s add ckenja.ghook.feature.swing.player
-    execute as @e[type=marker,tag=ckenja.ghook.marker] run function ckenja.ghook:feature/swing/marker
+    execute summon marker run function ckenja.ghook:feature/swing/marker
     tag @s remove ckenja.ghook.feature.swing.player
     
 #移動できるならPos代入して次tick用の慣性作成

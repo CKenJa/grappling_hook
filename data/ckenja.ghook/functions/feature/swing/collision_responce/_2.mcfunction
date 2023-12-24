@@ -1,3 +1,9 @@
+#> ckenja.ghook:feature/swing/collision_responce/_2
+#
+#
+#
+# @within function ckenja.ghook:feature/swing/collision_responce/_
+
 #衝突向きのベクトルを消したうえで力を再計算する。
     # 残ってる力 = 移動予定地-交点
     scoreboard players operation #feature.swing.vector.x ckenja.ghook = #marker.pos.x ckenja.ghook
