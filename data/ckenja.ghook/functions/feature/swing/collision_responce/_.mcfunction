@@ -75,4 +75,3 @@
 
 #もっとも近い交点に位置を変更する
     execute unless score #feature.swing.nearest.range ckenja.ghook matches 2147483647 run function ckenja.ghook:feature/swing/collision_responce/_2
-    execute if score #feature.swing.nearest.range ckenja.ghook matches 2147483647 run say fail!
