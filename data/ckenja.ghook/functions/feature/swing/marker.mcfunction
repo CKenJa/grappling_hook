@@ -17,9 +17,9 @@
     scoreboard players operation #feature.swing.temp.x ckenja.ghook *= #feature.swing.motion.x ckenja.ghook
     scoreboard players operation #feature.swing.temp.z ckenja.ghook = #feature.swing.motion.z ckenja.ghook
     scoreboard players operation #feature.swing.temp.z ckenja.ghook *= #feature.swing.motion.z ckenja.ghook
-    scoreboard players operation #feature.swing.temp ckenja.ghook = #feature.swing.temp.x ckenja.ghook
-    scoreboard players operation #feature.swing.temp ckenja.ghook += #feature.swing.temp.z ckenja.ghook
-    execute if score #feature.swing.temp ckenja.ghook matches 10000.. run function ckenja.ghook:feature/swing/get_jet_vec
+    scoreboard players operation #feature.swing.jet ckenja.ghook = #feature.swing.temp.x ckenja.ghook
+    scoreboard players operation #feature.swing.jet ckenja.ghook += #feature.swing.temp.z ckenja.ghook
+    execute if score #feature.swing.jet ckenja.ghook matches 10000.. run function ckenja.ghook:feature/swing/get_jet_vec
 
 #慣性
     scoreboard players operation #marker.merge.x ckenja.ghook += #intertia.x ckenja.ghook
@@ -27,7 +27,7 @@
     scoreboard players operation #marker.merge.z ckenja.ghook += #intertia.z ckenja.ghook
 
 #重力
-    scoreboard players remove #marker.merge.y ckenja.ghook 784
+    scoreboard players remove #marker.merge.y ckenja.ghook 392
 
 #ループでマーカーの方向に移動して球上の位置を出す
 #フックからロープ距離分マーカー方向に進んで、その場所の座標を記憶
