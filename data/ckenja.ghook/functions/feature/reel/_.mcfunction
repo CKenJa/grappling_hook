@@ -7,7 +7,8 @@
 #フック収納
 execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:feature/reel/void_kill
 
-execute on vehicle run function ckenja.ghook:feature/reel/kill_display
+ride @s dismount
+execute as @e[type=item_display,tag=ckenja.ghook.vehicle,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run kill @s
 
 #慣性をMotion代入
 scoreboard players operation $x delta.api.launch = @s ckenja.ghook.x
