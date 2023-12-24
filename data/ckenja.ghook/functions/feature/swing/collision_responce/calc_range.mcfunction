@@ -28,5 +28,11 @@ scoreboard players operation #feature.swing.temp.range ckenja.ghook = #feature.s
 scoreboard players operation #feature.swing.temp.range ckenja.ghook += #feature.swing.temp.y ckenja.ghook
 scoreboard players operation #feature.swing.temp.range ckenja.ghook += #feature.swing.temp.z ckenja.ghook
 
+#念のためその地点の当たり判定をチェックする
+    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[0] double 0.0001 run scoreboard players get #feature.swing.intersection.x ckenja.ghook
+    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[1] double 0.0001 run scoreboard players get #feature.swing.intersection.y ckenja.ghook
+    execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get #feature.swing.intersection.z ckenja.ghook
+    data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.Pos
+
 #比較してより近かったら上書き
-execute if score #feature.swing.temp.range ckenja.ghook < #feature.swing.nearest.range ckenja.ghook run function ckenja.ghook:feature/swing/collision_responce/update_nearest
+execute at @s if block ~0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~0.3 ~0.9 ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~0.9 ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~0.9 ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~0.9 ~-0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision if score #feature.swing.temp.range ckenja.ghook < #feature.swing.nearest.range ckenja.ghook run function ckenja.ghook:feature/swing/collision_responce/update_nearest

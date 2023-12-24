@@ -1,8 +1,8 @@
-#> ckenja.ghook:feature/swing/collision_detection/_
+#> ckenja.ghook:feature/swing/collision_responce/re_collision_detection
 #
 #
 #
-# @within function ckenja.ghook:feature/swing/marker
+# @within function ckenja.ghook:feature/swing/collision_responce/_3
 
 scoreboard players set #feature.swing.collision ckenja.ghook 0
 execute positioned ^ ^ ^0.125 if block ~0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~ ~-0.3 #ckenja.ghook:no_collision if block ~0.3 ~0.9 ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~0.9 ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~0.9 ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~0.9 ~-0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~0.3 #ckenja.ghook:no_collision if block ~-0.3 ~1.8 ~-0.3 #ckenja.ghook:no_collision run scoreboard players set #feature.swing.collision ckenja.ghook 1
@@ -23,7 +23,7 @@ execute positioned ^ ^ ^0.125 if block ~0.3 ~ ~0.3 #ckenja.ghook:no_collision if
 execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 0 if entity @s[distance=..0.125] at @s run function ckenja.ghook:feature/swing/collision_detection/check_and_tp
 
 #次の探査地点に空間がないなら衝突処理をする
-execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 0 run function ckenja.ghook:feature/swing/collision_responce/_
+#execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 0 run function ckenja.ghook:feature/swing/collision_responce/_
 
 #次の探査地点に空間はあるが、移動予定地点が後ろならそこを見てみて、そこもだめならもうここにする
 execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 1 if entity @s[distance=..0.125] run function ckenja.ghook:feature/swing/collision_detection/check_back
@@ -32,4 +32,4 @@ execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if 
 execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 0 run function ckenja.ghook:feature/swing/collision_detection/tp
 
 #決まってないなら、次の探査地点を探索する
-execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 1 positioned ^ ^ ^0.125 run function ckenja.ghook:feature/swing/collision_detection/_
+execute if score #feature.swing.collision_detect_loop ckenja.ghook matches 1 if score #feature.swing.collision ckenja.ghook matches 1 positioned ^ ^ ^0.125 run function ckenja.ghook:feature/swing/collision_responce/re_collision_detection
