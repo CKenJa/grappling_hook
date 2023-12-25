@@ -22,8 +22,8 @@ execute if entity @s[tag=ckenja.ghook.player.using_item.before,tag=!ckenja.ghook
 
 execute unless predicate ckenja.ghook:vehicle run function ckenja.ghook:player/not_vehicle
 
-#フックがないならフック射出試行
-execute unless score #flag.have_hook ckenja.ghook matches 1 run function ckenja.ghook:feature/shot/_
+#フック射出試行
+function ckenja.ghook:feature/shot/_
 
 #クリック検知
 execute if entity @s[tag=ckenja.ghook.player.using_item] run function ckenja.ghook:player/using_item
