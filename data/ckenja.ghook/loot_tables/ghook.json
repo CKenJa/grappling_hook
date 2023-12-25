@@ -18,7 +18,7 @@
               {
                 "function": "minecraft:set_name",
                 "name": {
-                  "text": "Grappling hook",
+                  "text": "立体機動装置",
                   "italic": false
                 }
               },
@@ -26,7 +26,7 @@
                 "function": "minecraft:set_lore",
                 "lore": [
                   {
-                    "text": "立体機動装置を模して開発されたグラップリングフック",
+                    "text": "ワイヤーは一本しか射出できないようだ...",
                     "italic": false
                   }
                 ]
