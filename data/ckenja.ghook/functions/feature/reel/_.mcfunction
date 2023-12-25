@@ -26,3 +26,7 @@ scoreboard players set #flag.have_hook ckenja.ghook 0
 playsound minecraft:block.ender_chest.close master @s ~ ~ ~ 0.25 2
 playsound minecraft:block.iron_trapdoor.open master @s ~ ~ ~ 1 1.33
 playsound minecraft:entity.fishing_bobber.retrieve master @s ~ ~ ~ 1 0.67
+
+scoreboard players reset @s ckenja.ghook.hook.x
+scoreboard players reset @s ckenja.ghook.hook.y
+scoreboard players reset @s ckenja.ghook.hook.z

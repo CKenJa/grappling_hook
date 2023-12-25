@@ -4,8 +4,11 @@
 #
 # @within function ckenja.ghook:player/using_item
 
-scoreboard players set #feature.shot.on_trigger ckenja.ghook 0 
+scoreboard players set #feature.shot.on_trigger ckenja.ghook 0
+scoreboard players set #feature.shot.detect_entity ckenja.ghook 0
+scoreboard players set #feature.shot.using_item ckenja.ghook 0
 
+execute if entity @s[tag=ckenja.ghook.player.using_item] if score @s ckenja.ghook.c matches 0 run scoreboard players set #feature.shot.using_item ckenja.ghook 1
 #フック射出
     data modify storage ckenja.ghook.__temp__: player.data.UUID set from entity @s UUID
     #0.25m単位で十分だろう

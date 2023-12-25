@@ -4,7 +4,7 @@
 #
 # @within function ckenja.ghook:feature/shot/loop
 
-execute if entity @s[tag=ckenja.ghook.player.using_item] if score @s ckenja.ghook.c matches 0 run function ckenja.ghook:feature/shot/using_item
+execute if score #feature.shot.using_item ckenja.ghook matches 1 run function ckenja.ghook:feature/shot/using_item
 execute unless entity @s[tag=ckenja.ghook.player.using_item] run data modify storage player_item_tuner: result.merge set value {tag:{CustomModelData:126000}}
 execute unless score @s ckenja.ghook.c matches 0 run data modify storage player_item_tuner: result.merge set value {tag:{CustomModelData:126000}}
 

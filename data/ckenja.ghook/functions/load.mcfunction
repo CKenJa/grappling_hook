@@ -13,6 +13,9 @@ scoreboard objectives add ckenja.ghook.c dummy
 scoreboard objectives add ckenja.ghook.pos.x dummy
 scoreboard objectives add ckenja.ghook.pos.y dummy
 scoreboard objectives add ckenja.ghook.pos.z dummy
+scoreboard objectives add ckenja.ghook.hook.x dummy
+scoreboard objectives add ckenja.ghook.hook.y dummy
+scoreboard objectives add ckenja.ghook.hook.z dummy
 
 scoreboard players set #98 ckenja.ghook 98
 scoreboard players set #100 ckenja.ghook 100

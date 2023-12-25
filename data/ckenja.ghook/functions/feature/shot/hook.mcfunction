@@ -9,3 +9,4 @@ data modify entity @s Leash.UUID set from storage ckenja.ghook.__temp__: player.
 scoreboard players operation @s ckenja.ghook = #temp.id ckenja.ghook
 execute store success score #flag.have_hook ckenja.ghook unless block ~ ~ ~ #ckenja.ghook:unable_hook
 execute if score #flag.have_hook ckenja.ghook matches 0 run scoreboard players reset #flag.hook_shot_this_tick ckenja.ghook
+execute if score #feature.shot.detect_entity ckenja.ghook matches 1 run function ckenja.ghook:feature/shot/get_pos

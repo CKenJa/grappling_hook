@@ -4,7 +4,8 @@
 #
 # @within function ckenja.ghook:feature/shot/success
 
-execute align xyz positioned ~0.5 ~ ~0.5 summon bat run function ckenja.ghook:feature/shot/hook
+execute if score #feature.shot.detect_entity ckenja.ghook matches 0 align xyz positioned ~0.5 ~ ~0.5 summon bat run function ckenja.ghook:feature/shot/hook
+execute if score #feature.shot.detect_entity ckenja.ghook matches 1 summon bat run function ckenja.ghook:feature/shot/setting_entity
 
 #アイテムの見た目変更
 data modify storage player_item_tuner: result.merge set value {tag:{CustomModelData:126001}}
