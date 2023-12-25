@@ -27,7 +27,8 @@
     scoreboard players operation #marker.merge.z ckenja.ghook += #intertia.z ckenja.ghook
 
 #重力
-    scoreboard players remove #marker.merge.y ckenja.ghook 392
+    execute if score #feature.swing.jet ckenja.ghook matches 10000.. run scoreboard players remove #marker.merge.y ckenja.ghook 196
+    execute unless score #feature.swing.jet ckenja.ghook matches 10000.. run scoreboard players remove #marker.merge.y ckenja.ghook 784
 
 #ループでマーカーの方向に移動して球上の位置を出す
 #フックからロープ距離分マーカー方向に進んで、その場所の座標を記憶
@@ -36,7 +37,7 @@
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get #marker.merge.z ckenja.ghook
     data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.Pos
     tag @s add ckenja.ghook.marker.this
-    execute positioned as @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score @s ckenja.ghook = #temp.id ckenja.ghook facing entity @s feet positioned as @s positioned ^ ^ ^-0.125 as @e[type=marker,tag=ckenja.ghook.marker.this,distance=..120] run function ckenja.ghook:feature/swing/loop
+    execute positioned as @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score @s ckenja.ghook = #temp.id ckenja.ghook facing entity @s feet positioned as @s as @e[type=marker,tag=ckenja.ghook.marker.this,distance=..120] run function ckenja.ghook:feature/swing/get_sphere
     tag @s remove ckenja.ghook.marker.this
 
 #衝突判定を取る
