@@ -25,12 +25,13 @@ data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity 
     scoreboard players operation @s ckenja.ghook.y -= #player.pos.y ckenja.ghook
     scoreboard players operation @s ckenja.ghook.z -= #player.pos.z ckenja.ghook
 
+#キー入力してたら短くしたろ
+    execute if score #feature.swing.jet ckenja.ghook matches 10000.. if score @s ckenja.ghook.l = #temp.feature.swing.updated_length ckenja.ghook run scoreboard players remove #temp.feature.swing.updated_length ckenja.ghook 125
+
 #演出
     execute rotated as @s on vehicle positioned as @s run tp @s ~ ~ ~ ~ 0
     execute unless score @s ckenja.ghook.l = #temp.feature.swing.updated_length ckenja.ghook run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.25 1
-    execute if score #feature.swing.jet ckenja.ghook matches 10000.. if score @s ckenja.ghook.l = #temp.feature.swing.updated_length ckenja.ghook run scoreboard players remove #temp.feature.swing.updated_length ckenja.ghook 125
 
 #ロープが縮んだら反映
     scoreboard players operation @s ckenja.ghook.l = #temp.feature.swing.updated_length ckenja.ghook
     scoreboard players reset #temp.feature.swing.updated_length ckenja.ghook
-
