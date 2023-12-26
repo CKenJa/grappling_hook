@@ -4,7 +4,8 @@
 #
 # @within function ckenja.ghook:player/tick
 
-scoreboard players operation #temp.feature.swing.loop ckenja.ghook = @s ckenja.ghook.l
+execute store result storage ckenja.ghook.__temp__: feature.swing.get_sphere.plus double 0.001 run scoreboard players get @s ckenja.ghook.l
+execute store result storage ckenja.ghook.__temp__: feature.swing.get_sphere.minus double -0.001 run scoreboard players get @s ckenja.ghook.l
 data modify storage ckenja.ghook.__temp__: player.data.Motion set from entity @s Motion
 data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity @s Rotation
 
@@ -31,10 +32,12 @@ data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity 
     scoreboard players operation @s ckenja.ghook.y /= #100 ckenja.ghook
     scoreboard players operation @s ckenja.ghook.z /= #100 ckenja.ghook
 
+#ロープが縮んだら反映
+    execute at @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:feature/swing/get_length
+
 #演出
     execute rotated as @s on vehicle positioned as @s run tp @s ~ ~ ~ ~ 0
-    execute unless score @s ckenja.ghook.l = #temp.feature.swing.updated_length ckenja.ghook run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.25 1
-
-#ロープが縮んだら反映
-    scoreboard players operation @s ckenja.ghook.l = #temp.feature.swing.updated_length ckenja.ghook
-    scoreboard players reset #temp.feature.swing.updated_length ckenja.ghook
+    execute unless score @s ckenja.ghook.l = #feature.swing.temp.length ckenja.ghook run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.25 1
+    tellraw @a {"score": {"name": "@s", "objective": "ckenja.ghook.l"}}
+    scoreboard players operation @s ckenja.ghook.l < #feature.swing.temp.length ckenja.ghook
+    tellraw @a {"score": {"name": "@s", "objective": "ckenja.ghook.l"}}

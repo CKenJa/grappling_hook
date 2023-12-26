@@ -13,7 +13,7 @@ execute unless score #flag.have_hook ckenja.ghook matches 1 if entity @s[tag=cke
     data modify storage ckenja.ghook.__temp__: player.data.UUID set from entity @s UUID
     #0.25m単位で十分だろう
     #batの横の当たり判定が0.5だからギリ足りないのでは？
-    scoreboard players set @s ckenja.ghook.l 0
+    scoreboard players set #feature.shot.length ckenja.ghook 0
     data modify storage player_item_tuner: result.merge set value {tag:{CustomModelData:126001}}
     execute anchored eyes positioned ^ ^ ^ run function ckenja.ghook:feature/shot/loop
     data modify storage player_item_tuner: condition.if set value {tag:{ctc:{id:"ghook",from:"ckenja.ghook:"}}}

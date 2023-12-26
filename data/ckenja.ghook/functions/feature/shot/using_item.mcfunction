@@ -19,3 +19,4 @@ execute positioned as @s run playsound minecraft:entity.blaze.hurt player @a ~ ~
 execute positioned as @s run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.25 0.67
 
 scoreboard players set @s ckenja.ghook.c 5
+scoreboard players operation @s ckenja.ghook.l = #feature.shot.length ckenja.ghook

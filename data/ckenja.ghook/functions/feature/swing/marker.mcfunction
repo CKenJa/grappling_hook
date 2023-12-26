@@ -37,11 +37,11 @@
     execute store result storage ckenja.ghook.__temp__: marker.merge.Pos[2] double 0.0001 run scoreboard players get #marker.merge.z ckenja.ghook
     data modify entity @s Pos set from storage ckenja.ghook.__temp__: marker.merge.Pos
     tag @s add ckenja.ghook.marker.this
-    execute positioned as @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score @s ckenja.ghook = #temp.id ckenja.ghook facing entity @s feet positioned as @s as @e[type=marker,tag=ckenja.ghook.marker.this,distance=..120] run function ckenja.ghook:feature/swing/get_sphere
+    execute positioned as @s as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score @s ckenja.ghook = #temp.id ckenja.ghook facing entity @s feet positioned as @s as @e[type=marker,tag=ckenja.ghook.marker.this,distance=..120] run function ckenja.ghook:feature/swing/get_sphere with storage ckenja.ghook.__temp__: feature.swing.get_sphere
     tag @s remove ckenja.ghook.marker.this
 
 #衝突判定を取る
     scoreboard players set #feature.swing.collision_detect_loop ckenja.ghook 1
     execute facing entity @s feet positioned ~ ~ ~ run function ckenja.ghook:feature/swing/collision_detection/_
-    
+
 kill @s
