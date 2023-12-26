@@ -38,6 +38,4 @@ data modify storage ckenja.ghook.__temp__: player.data.Rotation set from entity 
 #演出
     execute rotated as @s on vehicle positioned as @s run tp @s ~ ~ ~ ~ 0
     execute unless score @s ckenja.ghook.l = #feature.swing.temp.length ckenja.ghook run playsound minecraft:block.chain.place player @a ~ ~ ~ 0.25 1
-    tellraw @a {"score": {"name": "@s", "objective": "ckenja.ghook.l"}}
     scoreboard players operation @s ckenja.ghook.l < #feature.swing.temp.length ckenja.ghook
-    tellraw @a {"score": {"name": "@s", "objective": "ckenja.ghook.l"}}
