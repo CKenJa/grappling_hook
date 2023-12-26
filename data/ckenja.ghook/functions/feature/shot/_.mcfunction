@@ -4,7 +4,6 @@
 #
 # @within function ckenja.ghook:player/tick
 
-scoreboard players set #feature.shot.on_trigger ckenja.ghook 0
 scoreboard players set #feature.shot.detect_entity ckenja.ghook 0
 scoreboard players set #feature.shot.using_item ckenja.ghook 0
 
