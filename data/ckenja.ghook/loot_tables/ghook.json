@@ -9,12 +9,16 @@
             "functions": [
               {
                 "function": "minecraft:set_nbt",
-                "tag": "{CustomModelData:1260000,Unbreakable:true,ctc:{id:\"ghook\",from:\"ckenja.ghook:\"}}"
+                "tag": "{CustomModelData:126000,Unbreakable:true,ctc:{id:\"ghook\",from:\"ckenja.ghook:\"},HideFlags:6}"
+              },
+              {
+                "function": "set_attributes",
+                "modifiers": [{"amount": -10,"attribute": "generic.attack_speed","id": "3ac3f8f8-6407-491a-ad90-c7305393668c","name": "アイテム書き換え時にアイテムが下に下がるのを防ぐ","operation": "addition","slot": "mainhand"},{"amount": -10,"attribute": "generic.attack_speed","id": "4a0bd08e-4272-450b-9bfa-de4a26e7380f","name": "アイテム書き換え時にアイテムが下に下がるのを防ぐ","operation": "addition","slot": "offhand"}]
               },
               {
                 "function": "minecraft:set_name",
                 "name": {
-                  "text": "Grappling hook",
+                  "text": "立体機動装置",
                   "italic": false
                 }
               },
@@ -22,7 +26,7 @@
                 "function": "minecraft:set_lore",
                 "lore": [
                   {
-                    "text": "ブタさんの飛ぶ頃に",
+                    "text": "ワイヤーは一本しか射出できないようだ...",
                     "italic": false
                   }
                 ]
