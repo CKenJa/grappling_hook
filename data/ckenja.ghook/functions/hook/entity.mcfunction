@@ -1,4 +1,6 @@
-execute as @e[type=#ckenja.ghook:hookable_entity,tag=ckenja.ghook.target_entity,distance=..8] if score @s ckenja.ghook = #temp.id ckenja.ghook run data modify storage ckenja.ghook.__temp__: hook.target_entity.Pos set from entity @s Pos
+scoreboard players set #hook.have_entity ckenja.ghook 0 
+execute at @s as @e[type=#ckenja.ghook:hookable_entity,tag=ckenja.ghook.target_entity,distance=..8] if score @s ckenja.ghook = #temp.id ckenja.ghook run function ckenja.ghook:hook/entity2
+execute if score #hook.have_entity ckenja.ghook matches 0 run scoreboard players set #flag.hook.kill ckenja.ghook 0
 execute store result score #hook.target_entity.x ckenja.ghook run data get storage ckenja.ghook.__temp__: hook.target_entity.Pos[0] 10000
 execute store result score #hook.target_entity.y ckenja.ghook run data get storage ckenja.ghook.__temp__: hook.target_entity.Pos[1] 10000
 execute store result score #hook.target_entity.z ckenja.ghook run data get storage ckenja.ghook.__temp__: hook.target_entity.Pos[2] 10000
