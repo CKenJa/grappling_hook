@@ -5,6 +5,9 @@
         "conditions": {
           "item": {
             "nbt": "{ctc:{id:\"ghook\",from:\"ckenja.ghook:\"}}"
+          },
+          "player": {
+            "flags": {"is_sneaking": false}
           }
         }
       }

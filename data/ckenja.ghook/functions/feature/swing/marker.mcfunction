@@ -27,8 +27,8 @@
     scoreboard players operation #marker.merge.z ckenja.ghook += #intertia.z ckenja.ghook
 
 #重力
-    execute if score #feature.swing.jet ckenja.ghook matches 10000.. run scoreboard players remove #marker.merge.y ckenja.ghook 196
-    execute unless score #feature.swing.jet ckenja.ghook matches 10000.. run scoreboard players remove #marker.merge.y ckenja.ghook 784
+    scoreboard players remove #marker.merge.y ckenja.ghook 784
+    execute if block ~ ~ ~ water run scoreboard players add #marker.merge.y ckenja.ghook 780
 
 #ループでマーカーの方向に移動して球上の位置を出す
 #フックからロープ距離分マーカー方向に進んで、その場所の座標を記憶
@@ -43,5 +43,8 @@
 #衝突判定を取る
     scoreboard players set #feature.swing.collision_detect_loop ckenja.ghook 1
     execute facing entity @s feet positioned ~ ~ ~ run function ckenja.ghook:feature/swing/collision_detection/_
+
+#ロープが縮んだら反映
+    execute as @e[type=bat,tag=ckenja.ghook.hook,distance=..120] if score #temp.id ckenja.ghook = @s ckenja.ghook run function ckenja.ghook:feature/swing/get_length
 
 kill @s
